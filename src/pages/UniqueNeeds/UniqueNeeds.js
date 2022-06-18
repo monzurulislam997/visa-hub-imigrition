@@ -5,53 +5,53 @@ import img1 from '../../images/unique/img1.svg'
 import img2 from '../../images/unique/img2.svg'
 import img3 from '../../images/unique/img3.svg'
 import img4 from '../../images/unique/img4.svg'
+import './UniqueNeeds.css'
 const UniqueNeeds = () => {
     return (
         <div style={{ color: "#0b133b" }} className='container'>
-            <h1 className='text-center'> Flexible to meet your unique needs </h1>
-            <CardGroup>
-                <Card>
+            <h1 className='text-center my-5  '> Flexible to meet your unique needs </h1>
+            <CardGroup  >
+                <Card className='uniqueCard'  >
                     <Card.Img variant="top" width="100px" height="90px" src={img1} />
-                    <Card.Body>
-                        <Card.Title>Card title</Card.Title>
-                        <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in
-                            to additional content. This content is a little bit longer.
+                    <Card.Body >
+                        <Card.Title>Instant
+                            delivery</Card.Title>
+                        <Card.Text >
+                            Issue cards in a matter of seconds in bulk, upto 10,000 recipients.
                         </Card.Text>
                     </Card.Body>
 
                 </Card>
-                <Card>
+                <Card className='uniqueCard'>
                     <Card.Img variant="top" width="100px" height="90px" src={img2} />
                     <Card.Body>
-                        <Card.Title>Card title</Card.Title>
+                        <Card.Title>Reduced
+                            costs</Card.Title>
                         <Card.Text>
-                            This card has supporting text below as a natural lead-in to
-                            additional content.{' '}
+
+                            Gain operational efficiencies with a more cost-effective payment solution.
                         </Card.Text>
                     </Card.Body>
 
                 </Card>
-                <Card>
+                <Card className='uniqueCard'>
                     <Card.Img variant="top" width="100px" height="90px" src={img3} />
                     <Card.Body>
-                        <Card.Title>Card title</Card.Title>
+                        <Card.Title> Personalize experience</Card.Title>
                         <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in
-                            to additional content. This card has even longer content than the
-                            first to show that equal height action.
+
+                            Custom-brand your virtual card and create lasting impressions.
                         </Card.Text>
                     </Card.Body>
 
                 </Card>
-                <Card>
+                <Card className='uniqueCard'>
                     <Card.Img variant="top" width="100px" height="90px" src={img4} />
                     <Card.Body>
-                        <Card.Title>Card title</Card.Title>
+                        <Card.Title>Custom denominations</Card.Title>
                         <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in
-                            to additional content. This card has even longer content than the
-                            first to show that equal height action.
+
+                            Send any amount in any denomination ($1, ¥125.5, ₹2500, £52)
                         </Card.Text>
                     </Card.Body>
 
