@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [error, setError] = useState('')
     return (
-        <div className='w-50 mx-auto my-5 border p-5'>
+        <div className='w-50 mx-auto my-5 border bg-secondary  p-5'>
             <h5>Please, Log In</h5>
             <Form>
 
