@@ -17,7 +17,7 @@ const SignUp = () => {
         error1
 
     ] = useCreateUserWithEmailAndPassword(auth);
-
+    console.log(user)
     const handleEmail = (e) => {
         setEmail(e.target.value)
     }

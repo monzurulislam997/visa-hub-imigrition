@@ -3,9 +3,17 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
-import logo from '../logo192.png'
+import logo from '../logo192.png';
+import { Button } from 'react-bootstrap';
 import './Header.css'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import { signOut } from 'firebase/auth';
 const Header = () => {
+    const [user] = useAuthState(auth);
+    const logOut = () => {
+        signOut(auth)
+    }
     return (
         <>
 
@@ -23,14 +31,34 @@ const Header = () => {
                             <Nav.Link className='fs-5 ' href="#blogs" id="about">About Me</Nav.Link>
 
                         </Nav>
+                        {
+                            user && <span className='text-warning me-2'>Hello,</span>
+                        }  <span className='text-warning me-2'> {
+
+                            user?.email.split('@', 1)
+
+                        }</span>
                         <Nav>
 
-                            <Nav.Link eventKey={2} as={Link} className="fs-5" id="login" to="/login">
-                                Log In
-                            </Nav.Link>
-                            <Nav.Link eventKey={2} as={Link} className="fs-5" id="signup" to="/signup">
-                                Sign Up
-                            </Nav.Link>
+                            {
+                                user ? <Nav.Link as={Link} className="fs-5" id="login" to="/login">
+                                    Log In
+                                </Nav.Link> && <Button variant='primary' onClick={logOut}>Sign Out</Button> :
+                                    <Nav.Link as={Link} className="fs-5" id="signup" to="/signup">
+                                        Sign Up
+                                    </Nav.Link>
+
+                            }
+
+                            {
+                                !user && <Nav.Link as={Link} className="fs-5" id="login" to="/login">
+                                    log in
+                                </Nav.Link>
+
+
+                            }
+
+
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
