@@ -14,6 +14,7 @@ const SignUp = () => {
         createUserWithEmailAndPassword,
         user,
         loading,
+        error1
 
     ] = useCreateUserWithEmailAndPassword(auth);
 
@@ -74,7 +75,7 @@ const SignUp = () => {
                         <Form.Label>Confirm Password</Form.Label>
                         <Form.Control onBlur={handleConfirmPassword} type="password" placeholder="Confirm Password" required />
                     </Form.Group>
-                    <h5 className='text-danger '>{error}</h5>
+                    <h5 className='text-danger '>{error} </h5>
                     {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="Check me out" />
                     </Form.Group> */}
