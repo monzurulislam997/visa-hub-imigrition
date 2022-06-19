@@ -1,23 +1,24 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from './../../firebase.init';
-
+import googleLogo from '../../images/googleLogo.png'
 const SignUp = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState(' ');
     const [error, setError] = useState('');
+    const [signInWithGoogle, user1] = useSignInWithGoogle(auth);
     const navigate = useNavigate()
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
-        error1
+
 
     ] = useCreateUserWithEmailAndPassword(auth);
-    console.log(user)
+
     const handleEmail = (e) => {
         setEmail(e.target.value)
     }
@@ -27,6 +28,7 @@ const SignUp = () => {
     const handleConfirmPassword = e => {
         setConfirmPassword(e.target.value)
     }
+    console.log(user)
 
     const handleCreateUser = (e) => {
         e.preventDefault()
@@ -40,15 +42,24 @@ const SignUp = () => {
         createUserWithEmailAndPassword(email, password)
     }
 
-    if (user) {
+    const handleSignInWithGoogle = () => {
+        signInWithGoogle();
+    }
+
+    if (user || user1) {
         navigate('/home')
     }
+
+
     return (
-        <div className='w-50 mx-auto my-5 border bg-info p-5'>
+        <div className='w-50 mx-auto my-5 border p-5'>
             <h1>Please ,Sign Up</h1>
 
             <div>
-                <button>Google Sign In</button>
+                <Button onClick={handleSignInWithGoogle} variant='primary' className='w-100'>
+                    <img width='60px' height=" 50px" src={googleLogo} alt="google-logo" />
+                    Google Sign In
+                </Button>
             </div>
             {/* ------ password implementaion--------- */}
             <div style={{ height: '3px' }} className='or d-flex my-4'>
@@ -76,9 +87,7 @@ const SignUp = () => {
                         <Form.Control onBlur={handleConfirmPassword} type="password" placeholder="Confirm Password" required />
                     </Form.Group>
                     <h5 className='text-danger '>{error} </h5>
-                    {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group> */}
+
                     <Button className='w-100' variant="primary" type="submit">
                         Sign Up
                     </Button>

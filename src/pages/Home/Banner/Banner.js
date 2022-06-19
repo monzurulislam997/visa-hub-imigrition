@@ -15,7 +15,7 @@ const Banner = () => {
                         alt='First slide'
                     />
                     <Carousel.Caption >
-                        <h1>IMIGRITION & VISA CONSALTANTS</h1>
+                        <h1>IMIGRATION & VISA CONSALTANTS</h1>
                         <Button style={{ color: '#000', fontSize: "20px", fontWeight: "700" }} variant="warning" className="w-50 ">START BOOKING</Button>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -39,8 +39,8 @@ const Banner = () => {
                     />
 
                     <Carousel.Caption >
-                        <h1>WORLDS MOST TRUSTED IMIGRITION AGENCY </h1>
-                        <Button style={{ color: '	#000', fontSize: "20px", fontWeight: "700" }} variant="warning" className="w-50 ">STUDENTS FEEDBACKS</Button>
+                        <h1>WORLDS MOST TRUSTED IMIGRATION AGENCY </h1>
+                        <Button style={{ color: '#000', fontSize: "20px", fontWeight: "700" }} variant="warning" className="w-50 ">STUDENTS FEEDBACKS</Button>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
