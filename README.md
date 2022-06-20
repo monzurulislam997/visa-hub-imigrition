@@ -1,6 +1,6 @@
-# Visa Hub Imigrition
+# Visa Hub Imigration
 
-See the live site : [Create React App](https://visa-hub-imigrition.web.app/).
+See the live site : [Visa Hub Imigration](https://visa-hub-imigrition.web.app/).
 
 ## Projects Feature and Functionality
 1.This website is about Visa and imigration service;
