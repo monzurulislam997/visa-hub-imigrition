@@ -13,7 +13,7 @@ See the live site : [Visa Hub Imigration](https://visa-hub-imigrition.web.app/).
 
 ### Technology used:
 
-1.React
+1.JS library( React )
 2.React-bootstrap
 3.React-router-dom
 4.React-toast
