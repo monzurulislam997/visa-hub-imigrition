@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { Link, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import auth from '../../firebase.init';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+
+
 import googleLogo from '../../images/googleLogo.png'
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -19,6 +23,12 @@ const Login = () => {
         error
 
     ] = useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(
+        auth
+    );
+
+
     const [signInWithGoogle, user1] = useSignInWithGoogle(auth);
     const handleEmail = e => {
         setEmail(e.target.value)
@@ -32,6 +42,8 @@ const Login = () => {
 
         signInWithEmailAndPassword(email, password)
     }
+
+    // google sign in function
     const handleSignInWithGoogle = () => {
 
         signInWithGoogle();
@@ -40,6 +52,14 @@ const Login = () => {
     if (user || user1) {
         navigate(from, { replace: true })
 
+    }
+
+    //password reset
+    const resetPassword = async () => {
+
+        await sendPasswordResetEmail(email);
+        // toast('Sent email');
+        console.log('he')
     }
 
     return (
@@ -63,7 +83,9 @@ const Login = () => {
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
+                {/* sign up page link */}
                 <p>New here? <span><Link to='/signup'>Sign Up</Link></span> </p>
+                <p onClick={resetPassword}>Forgotten Password  </p>
             </Form>
             <div style={{ height: '2px' }} className='or d-flex my-4'>
                 <div className='w-50 bg-secondary me-3 '>
@@ -78,6 +100,8 @@ const Login = () => {
                     Google Sign In
                 </Button>
             </div>
+            {/* <ToastContainer /> */}
+
         </div >
     );
 };

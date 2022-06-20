@@ -25,10 +25,10 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto nav" >
-                            <Nav.Link className='fs-5' href="/home" id="home">Home</Nav.Link>
-                            <Nav.Link className=' fs-5 ' href="/service" id="service">Services</Nav.Link>
-                            <Nav.Link className='fs-5 ' href="#blogs" id="blogs">Blogs</Nav.Link>
-                            <Nav.Link className='fs-5 ' href="/about" id="about">About Me</Nav.Link>
+                            <Nav.Link className='fs-5' as={Link} to="/home" id="home">Home</Nav.Link>
+                            <Nav.Link className=' fs-5 ' as={Link} to="/service" id="service">Services</Nav.Link>
+                            <Nav.Link className='fs-5 ' as={Link} to="/blogs" id="blogs">Blogs</Nav.Link>
+                            <Nav.Link className='fs-5 ' as={Link} to="/about" id="about">About Me</Nav.Link>
 
                         </Nav>
                         {
@@ -63,10 +63,7 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <div style={{ backgroundColor: "#000", marginBottom: "-8px", color: 'orange' }}>
-                <h3 className='text-center  '>VISA HUB IMIGRATION </h3>
 
-            </div>
 
         </>
     );

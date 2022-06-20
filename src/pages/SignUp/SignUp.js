@@ -15,9 +15,9 @@ const SignUp = () => {
         createUserWithEmailAndPassword,
         user,
         loading,
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
 
-    ] = useCreateUserWithEmailAndPassword(auth);
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
@@ -28,8 +28,11 @@ const SignUp = () => {
     const handleConfirmPassword = e => {
         setConfirmPassword(e.target.value)
     }
-    console.log(user)
 
+
+
+
+    //create user with password email
     const handleCreateUser = (e) => {
         e.preventDefault()
         if (password.length < 6) {
@@ -39,9 +42,14 @@ const SignUp = () => {
         if (password !== confirmPassword) {
             setError("Password don't match")
         }
-        createUserWithEmailAndPassword(email, password)
+        createUserWithEmailAndPassword(email, password);
+
+
+
     }
 
+
+    // google sign in functio   n
     const handleSignInWithGoogle = () => {
         signInWithGoogle();
     }

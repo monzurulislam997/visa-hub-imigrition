@@ -7,6 +7,10 @@ const Home = () => {
     return (
         <div>
 
+            <div style={{ backgroundColor: "#000", marginBottom: "-8px", color: 'orange' }}>
+                <h3 className='text-center  '>VISA HUB IMIGRATION </h3>
+
+            </div>
             <Banner></Banner>
             <Services></Services>
             <UniqueNeeds></UniqueNeeds>

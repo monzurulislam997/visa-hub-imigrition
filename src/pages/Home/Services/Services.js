@@ -25,9 +25,7 @@ const Services = () => {
                         <Card.Body>
                             <Card.Title>Tourist visa</Card.Title>
                             <Card.Text>
-                                This is a longer card with supporting text below as a natural
-                                lead-in to additional content. This content is a little bit
-                                longer.
+                                Tourist visas are nonimmigrant visas for persons who want to enter the United States temporarily for business (visa category B-1), for tourism (visa category B.
                                 <h5>Price: 522$</h5>
                             </Card.Text>
                             <Button className='w-100' onClick={handleGoCheckOut} >Check Out</Button>
@@ -40,10 +38,8 @@ const Services = () => {
                         <Card.Body>
                             <Card.Title>Student Visa</Card.Title>
                             <Card.Text>
-                                This is a longer card with supporting text below as a natural
-                                lead-in to additional content. This content is a little bit
-                                longer.
-                                <h5>Price: 99$</h5>
+                                This feature will at first be accessible only to applicants for long-stay student visas residing in a country where the visa application is outsourced to an
+                                opportunity to all.   <h5>Price: 99$</h5>
                             </Card.Text>
                             <Button className='w-100' onClick={handleGoCheckOut}>Check Out</Button>
                         </Card.Body>
@@ -55,9 +51,7 @@ const Services = () => {
                         <Card.Body>
                             <Card.Title>Bussiness Visa</Card.Title>
                             <Card.Text>
-                                This is a longer card with supporting text below as a natural
-                                lead-in to additional content. This content is a little bit
-                                longer.
+                                A business visa is a type of travel authorization that allows an individual to visit a foreign nation for the purpose of conducting business. During the visit, they may engage in business activities that do not constitute work or employment.
                                 <h5>Price: 299$</h5>
                             </Card.Text>
                             <Button onClick={handleGoCheckOut} className=' w-100'>Check Out</Button>
@@ -70,9 +64,8 @@ const Services = () => {
                         <Card.Body>
                             <Card.Title>Travell Visa</Card.Title>
                             <Card.Text>
-                                This is a longer card with supporting text below as a natural
-                                lead-in to additional content. This content is a little bit
-                                longer.
+                                What is a travel visa used for?
+                                Travel visas allow the bearer to enter a foreign country for touristic and leisure purposes only and stay for a predetermined amount of time. These visas do not entitle the holder to work or engage in any business activities in the host country.
                                 <h5>Price: 799$</h5>
                             </Card.Text>
                             <Button onClick={handleGoCheckOut} className=' w-100'>Check Out</Button>
@@ -85,9 +78,7 @@ const Services = () => {
                         <Card.Body>
                             <Card.Title>Family Visa</Card.Title>
                             <Card.Text>
-                                This is a longer card with supporting text below as a natural
-                                lead-in to additional content. This content is a little bit
-                                longer.
+                                There are two types of family-based immigrant visas: Immediate Relative – these visas are based on a close family relationship with a U.S. citizen, such as a spouse, child or parent
                                 <h5>Price: 766$</h5>
                             </Card.Text>
                             <Button onClick={handleGoCheckOut} className=' w-100'>Check Out</Button>
