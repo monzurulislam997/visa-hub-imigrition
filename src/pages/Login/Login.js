@@ -35,23 +35,6 @@ const Login = () => {
         setPassword(e.target.value)
     }
 
-    const handleuserLogin = (e) => {
-        e.preventDefault();
-
-        signInWithEmailAndPassword(email, password)
-    }
-
-    // google sign in function
-    const handleSignInWithGoogle = () => {
-
-        signInWithGoogle();
-    }
-
-    if (user || user1) {
-        navigate(from, { replace: true })
-
-    }
-
     //password reset
     const resetPassword = async () => {
         if (email === '') {
@@ -61,6 +44,27 @@ const Login = () => {
         toast('Sent email');
 
     }
+
+    //log in user
+    const handleuserLogin = (e) => {
+        e.preventDefault();
+        if (!email) {
+            return
+        }
+        signInWithEmailAndPassword(email, password)
+    }
+
+    // google sign in function
+    const handleSignInWithGoogle = () => {
+        signInWithGoogle();
+    }
+
+    if (user || user1) {
+        navigate(from, { replace: true })
+
+    }
+
+
 
     return (
         <div className='w-50 mx-auto my-5 border   p-5'>
