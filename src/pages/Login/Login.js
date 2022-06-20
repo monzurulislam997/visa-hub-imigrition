@@ -3,8 +3,8 @@ import { Form, Button } from 'react-bootstrap';
 import { Link, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 import googleLogo from '../../images/googleLogo.png'
@@ -24,9 +24,7 @@ const Login = () => {
 
     ] = useSignInWithEmailAndPassword(auth);
 
-    const [sendPasswordResetEmail] = useSendPasswordResetEmail(
-        auth
-    );
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
 
 
     const [signInWithGoogle, user1] = useSignInWithGoogle(auth);
@@ -56,10 +54,12 @@ const Login = () => {
 
     //password reset
     const resetPassword = async () => {
-
+        if (email === '') {
+            return toast("Please type email")
+        }
         await sendPasswordResetEmail(email);
-        // toast('Sent email');
-        console.log('he')
+        toast('Sent email');
+
     }
 
     return (
@@ -85,7 +85,7 @@ const Login = () => {
                 </Button>
                 {/* sign up page link */}
                 <p>New here? <span><Link to='/signup'>Sign Up</Link></span> </p>
-                <p onClick={resetPassword}>Forgotten Password  </p>
+                <button className='border-0 text-danger bg-light' onClick={resetPassword}>Forgotten Password ? </button>
             </Form>
             <div style={{ height: '2px' }} className='or d-flex my-4'>
                 <div className='w-50 bg-secondary me-3 '>
@@ -100,7 +100,7 @@ const Login = () => {
                     Google Sign In
                 </Button>
             </div>
-            {/* <ToastContainer /> */}
+            <ToastContainer />
 
         </div >
     );
